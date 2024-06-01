@@ -16,6 +16,7 @@ dependencies:
   http: ^1.2.1
   videosdk: ^1.1.12
   flutter_vlc_player: ^7.4.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,10 @@ flutter:
   assets:
     - assets/
     # - .env
+
+flutter_icons:
+  android: true
+  image_path: "assets/logo1.png"
+  adaptive_icon_foreground: "assets/logo1.png"
+  # ios: true
+  adaptive_icon_background: "#eeff1b"

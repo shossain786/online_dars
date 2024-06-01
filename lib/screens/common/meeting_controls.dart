@@ -29,6 +29,7 @@ class _MeetingControlsState extends State<MeetingControls> {
           color: Colors.red,
           iconSize: 30,
         ),
+        const SizedBox(width: 20),
         IconButton(
           onPressed: widget.onToggleMicButtonPressed,
           iconSize: 30,
@@ -42,6 +43,7 @@ class _MeetingControlsState extends State<MeetingControls> {
                   color: Colors.red,
                 ),
         ),
+        const SizedBox(width: 20),
         IconButton(
           onPressed: widget.onToggleCameraButtonPressed,
           iconSize: 30,

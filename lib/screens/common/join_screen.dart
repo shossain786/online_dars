@@ -6,16 +6,19 @@ import 'meeting_screen.dart';
 class JoinScreen extends StatelessWidget {
   final _meetingIdController = TextEditingController();
   final _userNameController = TextEditingController();
+  final _classNameController = TextEditingController();
   JoinScreen({super.key});
 
   void onCreateButtonPressed(BuildContext context) async {
     String userName = _userNameController.text.trim();
-    if (userName.isNotEmpty) {
+    String className = _classNameController.text.trim();
+    if (userName.isNotEmpty && className.isNotEmpty) {
       await createMeeting().then((meetingId) {
         if (!context.mounted) return;
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => MeetingScreen(
+              classRoomName: className,
               user: _userNameController.text,
               meetingId: meetingId,
               token: token,
@@ -26,7 +29,7 @@ class JoinScreen extends StatelessWidget {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("Please enter your name"),
+          content: Text("Please enter your name and class name"),
           backgroundColor: Colors.red,
         ),
       );
@@ -44,6 +47,7 @@ class JoinScreen extends StatelessWidget {
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => MeetingScreen(
+            classRoomName: _classNameController.text.trim(),
             user: _userNameController.text,
             meetingId: meetingId,
             token: token,
@@ -78,7 +82,17 @@ class JoinScreen extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
                   child: TextField(
                     decoration: const InputDecoration(
-                      hintText: 'Your Name',
+                      labelText: 'Class Name',
+                      border: OutlineInputBorder(),
+                    ),
+                    controller: _classNameController,
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
+                  child: TextField(
+                    decoration: const InputDecoration(
+                      labelText: 'Your Name',
                       border: OutlineInputBorder(),
                     ),
                     controller: _userNameController,
@@ -88,7 +102,7 @@ class JoinScreen extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
                   child: TextField(
                     decoration: const InputDecoration(
-                      hintText: 'Meeting Id',
+                      labelText: 'Class Room Id',
                       border: OutlineInputBorder(),
                     ),
                     controller: _meetingIdController,

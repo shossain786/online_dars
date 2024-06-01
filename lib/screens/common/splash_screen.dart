@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Image.asset(
               'assets/logo.png',
               color: kColorScheme.onPrimaryContainer,
-              height: 200,
+              height: 250,
             ),
           ),
           const SizedBox(height: 100),
@@ -51,6 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
               style: TextStyle(
                 fontSize: 20,
                 color: kColorScheme.onPrimaryContainer,
+                decorationColor: kColorScheme.onPrimaryContainer,
               ),
               textAlign: TextAlign.center,
             ),

@@ -15,11 +15,13 @@ class MeetingScreen extends StatefulWidget {
   final String meetingId;
   final String token;
   final String user;
+  final String classRoomName;
   const MeetingScreen({
     super.key,
     required this.meetingId,
     required this.token,
     required this.user,
+    required this.classRoomName,
   });
 
   @override
@@ -76,25 +78,20 @@ class _MeetingScreenState extends State<MeetingScreen> {
     });
   }
 
-  Future<bool> _onWillPop() async {
-    _room.leave();
-    return true;
-  }
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () => _onWillPop(),
+      onWillPop: () async => false,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Live ClassRoom'),
+          title: Text('Class Room ${widget.classRoomName}'),
+          automaticallyImplyLeading: false,
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               Text(widget.meetingId),
-              //render all participant
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
