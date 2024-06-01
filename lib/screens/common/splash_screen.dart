@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:online_dars/main.dart';
+import 'package:online_dars/screens/common/auth.dart';
 import 'package:online_dars/screens/common/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -22,7 +24,13 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomeScreen(),
+            builder: (context) => StreamBuilder(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) return const HomeScreen();
+                return const AuthScreen();
+              },
+            ),
           ),
         );
       },

@@ -17,6 +17,8 @@ dependencies:
   videosdk: ^1.1.12
   flutter_vlc_player: ^7.4.1
   flutter_launcher_icons: ^0.13.1
+  firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
 
 dev_dependencies:
   flutter_test:
@@ -37,4 +39,5 @@ flutter_icons:
   image_path: "assets/logo1.png"
   adaptive_icon_foreground: "assets/logo1.png"
   # ios: true
-  adaptive_icon_background: "#eeff1b"
+  adaptive_icon_background: "#ffffff"
+  #flutter pub run flutter_launcher_icons:main

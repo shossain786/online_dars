@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "471271644685",
+    "project_id": "online-class-bd57e",
+    "storage_bucket": "online-class-bd57e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:471271644685:android:aef07ef0e2ae6080587f44",
+        "android_client_info": {
+          "package_name": "com.example.online_dars"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY1TNSjrRgjQoGJu9R1uqrcbaDWdqlI0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
