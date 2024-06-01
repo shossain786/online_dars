@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:online_dars/main.dart';
 import 'package:online_dars/screens/common/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 2),
+      const Duration(seconds: 4),
       () {
         Navigator.pushReplacement(
           context,
@@ -43,6 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Image.asset(
               'assets/videosdk_text.png',
               fit: BoxFit.scaleDown,
+              color: kColorScheme.primary,
               scale: 4,
             ),
           ),
