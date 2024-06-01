@@ -51,10 +51,13 @@ class _ParticipantTileState extends State<ParticipantTile> {
             )
           : Container(
               color: Colors.grey.shade800,
-              child: const Center(
-                child: Icon(
-                  Icons.person,
-                  size: 100,
+              child: Center(
+                child: Text(
+                  widget.participant.displayName,
+                  style: const TextStyle(
+                    fontSize: 40,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
             ),

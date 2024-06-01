@@ -17,7 +17,7 @@ class _MyNavBarState extends State<MyNavBar> with TickerProviderStateMixin {
       backgroundColor: Colors.blue.shade500,
       gradientColors: [
         kColorScheme.onPrimaryContainer,
-        kColorScheme.onPrimaryContainer.withOpacity(0.6),
+        kColorScheme.onPrimaryContainer.withOpacity(0.7),
         kColorScheme.onPrimaryContainer.withOpacity(0.9),
       ],
       gradientType: GradientType.horizontal,
@@ -30,15 +30,17 @@ class _MyNavBarState extends State<MyNavBar> with TickerProviderStateMixin {
       items: [
         NavBarItem(icon: Icons.home_rounded, label: "Home", onTap: () {}),
         NavBarItem(
-            icon: Icons.live_tv_rounded,
-            label: "Live Class",
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => JoinScreen(),
-                  ));
-            }),
+          icon: Icons.live_tv_rounded,
+          label: "Live Class",
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => JoinScreen(),
+              ),
+            );
+          },
+        ),
         NavBarItem(
             icon: Icons.chat_bubble_rounded, label: "Chat", onTap: () {}),
         NavBarItem(

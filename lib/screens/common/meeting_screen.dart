@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:online_dars/screens/common/home_screen.dart';
@@ -12,8 +14,13 @@ var camEnabled = false;
 class MeetingScreen extends StatefulWidget {
   final String meetingId;
   final String token;
-  const MeetingScreen(
-      {super.key, required this.meetingId, required this.token});
+  final String user;
+  const MeetingScreen({
+    super.key,
+    required this.meetingId,
+    required this.token,
+    required this.user,
+  });
 
   @override
   State<MeetingScreen> createState() => _MeetingScreenState();
@@ -29,14 +36,12 @@ class _MeetingScreenState extends State<MeetingScreen> {
     _room = VideoSDK.createRoom(
       roomId: widget.meetingId,
       token: widget.token,
-      displayName: "John Doe",
+      displayName: widget.user,
       micEnabled: micEnabled,
       camEnabled: camEnabled,
       defaultCameraIndex: kIsWeb ? 0 : 1,
     );
     setMeetingEventListener();
-
-    // Join room
     _room.join();
     super.initState();
   }
@@ -82,7 +87,7 @@ class _MeetingScreenState extends State<MeetingScreen> {
       onWillPop: () => _onWillPop(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('VideoSDK QuickStart'),
+          title: const Text('Live ClassRoom'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
