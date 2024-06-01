@@ -57,6 +57,7 @@ class _ParticipantTileState extends State<ParticipantTile> {
                   style: const TextStyle(
                     fontSize: 40,
                     overflow: TextOverflow.ellipsis,
+                    color: Colors.white,
                   ),
                 ),
               ),

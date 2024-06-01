@@ -35,17 +35,24 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         children: [
           Center(
-            child: Image.asset('assets/logo.png'),
+            child: Image.asset(
+              'assets/logo.png',
+              color: kColorScheme.onPrimaryContainer,
+              height: 200,
+            ),
           ),
+          const SizedBox(height: 100),
           Positioned(
             bottom: kIsWeb ? 0 : 40,
             left: 0,
             right: 0,
-            child: Image.asset(
-              'assets/videosdk_text.png',
-              fit: BoxFit.scaleDown,
-              color: kColorScheme.primary,
-              scale: 4,
+            child: Text(
+              'ONLINE ISLAMIC EDUCATION',
+              style: TextStyle(
+                fontSize: 20,
+                color: kColorScheme.onPrimaryContainer,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
         ],
