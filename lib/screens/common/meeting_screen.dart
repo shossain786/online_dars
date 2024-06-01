@@ -2,6 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:online_dars/screens/common/home_screen.dart';
 import 'package:videosdk/videosdk.dart';
 
@@ -91,7 +92,24 @@ class _MeetingScreenState extends State<MeetingScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Text(widget.meetingId),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(widget.meetingId),
+                  IconButton(
+                    icon: const Icon(Icons.copy),
+                    onPressed: () {
+                      Clipboard.setData(ClipboardData(text: widget.meetingId));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Classroom id copied!'),
+                          backgroundColor: Colors.blue,
+                        ),
+                      );
+                    },
+                  )
+                ],
+              ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
