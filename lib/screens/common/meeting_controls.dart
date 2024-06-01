@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'meeting_screen.dart';
 
@@ -28,9 +27,11 @@ class _MeetingControlsState extends State<MeetingControls> {
           onPressed: widget.onLeaveButtonPressed,
           icon: const Icon(Icons.call_end_rounded),
           color: Colors.red,
+          iconSize: 30,
         ),
         IconButton(
           onPressed: widget.onToggleMicButtonPressed,
+          iconSize: 30,
           icon: micEnabled
               ? const Icon(
                   Icons.mic_rounded,
@@ -43,6 +44,7 @@ class _MeetingControlsState extends State<MeetingControls> {
         ),
         IconButton(
           onPressed: widget.onToggleCameraButtonPressed,
+          iconSize: 30,
           icon: camEnabled
               ? const Icon(
                   Icons.videocam_rounded,
